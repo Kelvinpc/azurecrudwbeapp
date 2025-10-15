@@ -1,34 +1,36 @@
 <?php
 
-class Database
-{
-    private static $host = "kelvindb.mysql.database.azure.com";
-    private static $dbname = "centrocapacitacion";
-    private static $username = "kelvin"; 
-    private static $password = "Holaquehace123*";
-    private static $conexion = null;
+// clase de conexión SERVER > BD
+class Database{
+  private static $host="kelvindb.mysql.database.azure.com";
+  private static $dbname="centrocapacitacion";
+  private static $username="kelvin";
 
-    public static function getConexion()
-    {
-        if (self::$conexion === null) {
-            try {
+  private static $password="Holaquehace123";
 
-                $dsn = "sqlsrv:Server=" . self::$host . ";Database=" . self::$dbname;
+  private static $charset="utf8mb4";
 
-                self::$conexion = new PDO($dsn, self::$username, self::$password, [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                ]);
-            } catch (PDOException $e) {
-                die("Error al conectar a Azure SQL: " . $e->getMessage());
-            }
-        }
+  private static $conexion=null;
 
-        return self::$conexion;
+  public static function getConexion(){
+
+    if(self::$conexion===null){
+      try{
+        //Estructurar la cadena de conexión
+        $DSN="mysql:host=" . self::$host.";port=3306;dbname=".self::$dbname.";charset=".self::$charset;
+        $option=[
+          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+          PDO::ATTR_EMULATE_PREPARES => false
+        ];
+        self::$conexion=new PDO($DSN, self::$username,self::$password,$option);
+      }catch(PDOException $e){
+        throw new PDOException($e->getMessage());
+      }
     }
-
-    public static function closeConexion()
-    {
-        self::$conexion = null;
-    }
+    return self::$conexion;
+  }
+public static function closeConexion(){
+  self::$conexion=null;
+}
 }
