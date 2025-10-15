@@ -6,15 +6,21 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
   $alumno = new Alumno();
 
   switch ($_SERVER["REQUEST_METHOD"]) {
-    case "GET":
+      case "GET":
       header("Content-Type: application/json; charset=utf-8");
 
       if ($_GET["task"] == 'getAll') {
-        echo json_encode($alumno->getAll());
+          echo json_encode($alumno->getAll());
       } else if ($_GET["task"] == 'getById') {
-        echo json_encode($alumno->getById($_GET['idalumno']));
+          // ← reemplaza esta línea:
+          // echo json_encode($alumno->getById($_GET['idalumno']));
+
+          // ← por esta:
+          $id = $_GET['id'] ?? null;
+          echo json_encode($alumno->getById($id));
       }
       break;
+
 
     case "POST":
       $input = file_get_contents("php://input");
