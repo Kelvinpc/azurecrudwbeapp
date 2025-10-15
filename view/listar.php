@@ -17,7 +17,7 @@
   <style>
     body { background-color: #f8f9fa; }
     .navbar-brand { font-weight: bold; letter-spacing: 1px; }
-    .card-header { background-color: #0d6efd; color: white; font-weight: bold; }
+    .card-header { background-color: #fdb10dff; color: white; font-weight: bold; }
     .btn { transition: all 0.3s ease; }
     .btn:hover { transform: scale(1.05); }
     th, td { vertical-align: middle; }
@@ -63,7 +63,7 @@
   const tabla = document.querySelector("#tabla-alumnos tbody");
 
   function obtenerDatos() {
-    fetch(`/controller/AlumnoController.php?task=getAll`)
+    fetch(`../controller/AlumnoController.php?task=getAll`)
       .then(response => response.json())
       .then(data => {
         tabla.innerHTML = '';

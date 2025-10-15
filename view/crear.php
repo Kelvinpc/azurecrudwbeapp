@@ -169,7 +169,7 @@
         text: "Confirma si deseas registrar.",
         icon: "question",
         showCancelButton: true,
-        confirmButtonColor: "#0d6efd",
+        confirmButtonColor: "#fdb10dff",
         cancelButtonColor: "#6c757d",
         confirmButtonText: "Registrar",
         cancelButtonText: "Cancelar"

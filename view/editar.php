@@ -135,7 +135,7 @@
           text: "Esta acción modificará la información del registro.",
           icon: 'question',
           showCancelButton: true,
-          confirmButtonColor: '#0d6efd',
+          confirmButtonColor: '#fdb10dff',
           cancelButtonColor: '#6c757d',
           confirmButtonText: 'Sí, actualizar',
           cancelButtonText: 'Cancelar'
