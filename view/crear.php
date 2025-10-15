@@ -39,7 +39,7 @@
 
   <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="text-primary">Registrar Nuevo Alumno</h2>
+      <h2 class="text-primary">Registra</h2>
       <button type="button" onclick="window.location.href='./listar.php'" class="btn btn-outline-secondary">
         <i class="fa-solid fa-arrow-left me-1"></i> Volver
       </button>

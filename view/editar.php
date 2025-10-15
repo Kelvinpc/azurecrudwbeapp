@@ -17,7 +17,7 @@
 
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #f8f9faf8;
     }
 
     .card {
