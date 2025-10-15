@@ -44,7 +44,7 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
       $dataJSON = json_decode($input, true);
 
       $registro = [
-        "idalumno"    => $dataJSON["idalumno"],
+        "idalumno"    => $dataJSON["id"],
         "nombre"      => $dataJSON["nombre"],
         "apellidos"   => $dataJSON["apellidos"],
         "correo"      => $dataJSON["correo"],
