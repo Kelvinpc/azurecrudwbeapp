@@ -6,7 +6,7 @@ class Database{
   private static $dbname="centrocapacitacion";
   private static $username="kelvin";
 
-  private static $password="Holaquehace123";
+  private static $password="Holaquehace123*";
 
   private static $charset="utf8mb4";
 
