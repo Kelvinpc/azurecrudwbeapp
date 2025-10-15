@@ -43,7 +43,7 @@
 
         <thead class="table-light">
           <tr>
-            <th>Nombre</th>
+            <th>Nombres</th>
             <th>apellidos</th>
             <th>correo</th>
             <th>tipodoc</th>
